@@ -18,6 +18,7 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService{
 
+    private EmailSender emailSender;
     @Autowired
     private UserRepository userRepository;
 
@@ -115,5 +116,10 @@ public class UserServiceImpl implements UserService{
     public void changePassword(User user, String novaSenha) {
         user.setSenha(passwordEncoder.encode(novaSenha));
         userRepository.save(user);
+    }
+
+    @Override
+    public boolean verificandoSenhaAntiga(User user, String senhaAntiga) {
+        return passwordEncoder.matches(senhaAntiga, user.getSenha());
     }
 }

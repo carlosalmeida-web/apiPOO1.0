@@ -1,10 +1,14 @@
 package com.apiTP.tomatespodres.models;
+
+import com.apiTP.tomatespodres.services.EmailService;
+
 public class UserModel {
     private String primeiroNome;
     private String ultimoNome;
     private String email;
     private String senha;
     private String senhaCorrespondente;
+    private EmailService emailService;
 
     public UserModel() {
     }
@@ -49,4 +53,11 @@ public class UserModel {
         this.senhaCorrespondente = senhaCorrespondente;
     }
 
+    public EmailService getEmailService() {
+        return emailService;
+    }
+
+    public void setEmailService(EmailService emailService) {
+        this.emailService = emailService;
+    }
 }

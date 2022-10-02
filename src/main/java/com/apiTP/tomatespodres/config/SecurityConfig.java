@@ -33,4 +33,6 @@ public class SecurityConfig {
                 antMatchers(WHITE_LISTS_URLS).permitAll();
         return http.build();
     }
+
+
 }

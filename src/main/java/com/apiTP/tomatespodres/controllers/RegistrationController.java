@@ -77,6 +77,16 @@ public class RegistrationController {
             return "Senha não redefinida";
         }
     }
+    @PostMapping("/changePassword")
+    public String mudarSenha(@RequestBody PasswordModel passwordModel) {
+        User user = userService.findUserByEmail(passwordModel.getEmail());
+        if(!userService.verificandoSenhaAntiga(user, passwordModel.getSenhaAntiga())) {
+            return "Senha antiga inválida";
+        }
+        // Salvando nova senha
+        userService.changePassword(user,passwordModel.getNovaSenha());
+        return "Senha alterada com sucesso";
+    }
 
     private String senhaResetTokenEmail(User user, String applicationUrl, String token) {
         String url = applicationUrl + "/savePassword?token=" + token;
