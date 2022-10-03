@@ -109,6 +109,4 @@ public class RegistrationController {
                 request.getServerPort() +
                 request.getContextPath();
     }
-
-
 }
