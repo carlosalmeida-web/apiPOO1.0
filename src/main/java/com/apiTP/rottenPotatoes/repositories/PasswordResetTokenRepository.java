@@ -1,6 +1,6 @@
-package com.apiTP.tomatespodres.repositories;
+package com.apiTP.rottenPotatoes.repositories;
 
-import com.apiTP.tomatespodres.entity.PasswordResetToken;
+import com.apiTP.rottenPotatoes.entity.PasswordResetToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

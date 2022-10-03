@@ -1,6 +1,6 @@
-package com.apiTP.tomatespodres.event;
+package com.apiTP.rottenPotatoes.event;
 
-import com.apiTP.tomatespodres.entity.User;
+import com.apiTP.rottenPotatoes.entity.User;
 import org.springframework.context.ApplicationEvent;
 
 public class RegistrationCompleteEvent extends ApplicationEvent {

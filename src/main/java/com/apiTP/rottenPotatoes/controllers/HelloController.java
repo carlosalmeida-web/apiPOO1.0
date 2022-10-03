@@ -1,4 +1,4 @@
-package com.apiTP.tomatespodres.controllers;
+package com.apiTP.rottenPotatoes.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

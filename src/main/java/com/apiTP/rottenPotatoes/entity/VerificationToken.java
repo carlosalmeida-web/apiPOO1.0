@@ -1,4 +1,4 @@
-package com.apiTP.tomatespodres.entity;
+package com.apiTP.rottenPotatoes.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -7,7 +7,8 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class PasswordResetToken implements Serializable {
+@Table(name = "tb_verification")
+public class VerificationToken implements Serializable {
     private static final long serialVersionUID = 1L;
 
     // Tempo para a expiração do Token
@@ -22,21 +23,21 @@ public class PasswordResetToken implements Serializable {
     private Date tempoParaExpirar;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "FK_PASSWORD_TOKEN"))
+    @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "FK_USER_VERIFY_TOKEN"))
 
     private User user;
 
-    public PasswordResetToken() {
+    public VerificationToken() {
     }
 
-    public PasswordResetToken(User user, String token) {
+    public VerificationToken(User user, String token) {
         super();
         this.user = user;
         this.token = token;
         this.tempoParaExpirar = calculoDataExpiracao(TEMPO_EXPIRACAO);
     }
 
-    public PasswordResetToken(String token) {
+    public VerificationToken(String token) {
         super();
         this.token = token;
         this.tempoParaExpirar = calculoDataExpiracao(TEMPO_EXPIRACAO);
@@ -85,7 +86,7 @@ public class PasswordResetToken implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PasswordResetToken that = (PasswordResetToken) o;
+        VerificationToken that = (VerificationToken) o;
         return Objects.equals(id, that.id) && Objects.equals(token, that.token) && Objects.equals(tempoParaExpirar, that.tempoParaExpirar) && Objects.equals(user, that.user);
     }
 

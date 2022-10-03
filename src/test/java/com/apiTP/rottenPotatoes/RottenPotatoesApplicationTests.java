@@ -1,10 +1,10 @@
-package com.apiTP.tomatespodres;
+package com.apiTP.rottenPotatoes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TomatesPodresApplicationTests {
+class RottenPotatoesApplicationTests {
 
 	@Test
 	void contextLoads() {

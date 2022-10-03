@@ -1,7 +1,4 @@
-package com.apiTP.tomatespodres.entity;
-
-import com.apiTP.tomatespodres.services.UserService;
-import lombok.Data;
+package com.apiTP.rottenPotatoes.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

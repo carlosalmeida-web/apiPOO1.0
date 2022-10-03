@@ -1,13 +1,12 @@
-package com.apiTP.tomatespodres.event.listener;
+package com.apiTP.rottenPotatoes.event.listener;
 
-import com.apiTP.tomatespodres.entity.User;
-import com.apiTP.tomatespodres.event.RegistrationCompleteEvent;
-import com.apiTP.tomatespodres.services.EmailSender;
-import com.apiTP.tomatespodres.services.UserService;
+import com.apiTP.rottenPotatoes.entity.User;
+import com.apiTP.rottenPotatoes.event.RegistrationCompleteEvent;
+import com.apiTP.rottenPotatoes.services.EmailSender;
+import com.apiTP.rottenPotatoes.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;

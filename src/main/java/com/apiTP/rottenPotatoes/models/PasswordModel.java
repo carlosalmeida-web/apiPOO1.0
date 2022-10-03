@@ -1,4 +1,4 @@
-package com.apiTP.tomatespodres.models;
+package com.apiTP.rottenPotatoes.models;
 
 public class PasswordModel {
 

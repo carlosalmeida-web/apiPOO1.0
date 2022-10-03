@@ -1,11 +1,11 @@
-package com.apiTP.tomatespodres.controllers;
+package com.apiTP.rottenPotatoes.controllers;
 
-import com.apiTP.tomatespodres.entity.User;
-import com.apiTP.tomatespodres.entity.VerificationToken;
-import com.apiTP.tomatespodres.event.RegistrationCompleteEvent;
-import com.apiTP.tomatespodres.models.PasswordModel;
-import com.apiTP.tomatespodres.models.UserModel;
-import com.apiTP.tomatespodres.services.UserService;
+import com.apiTP.rottenPotatoes.entity.User;
+import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.event.RegistrationCompleteEvent;
+import com.apiTP.rottenPotatoes.models.PasswordModel;
+import com.apiTP.rottenPotatoes.models.UserModel;
+import com.apiTP.rottenPotatoes.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;

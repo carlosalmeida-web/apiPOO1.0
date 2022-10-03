@@ -1,4 +1,4 @@
-package com.apiTP.tomatespodres.config;
+package com.apiTP.rottenPotatoes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -1,8 +1,8 @@
-package com.apiTP.tomatespodres.services;
+package com.apiTP.rottenPotatoes.services;
 
-import com.apiTP.tomatespodres.entity.User;
-import com.apiTP.tomatespodres.entity.VerificationToken;
-import com.apiTP.tomatespodres.models.UserModel;
+import com.apiTP.rottenPotatoes.entity.User;
+import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.models.UserModel;
 
 import java.util.Optional;
 

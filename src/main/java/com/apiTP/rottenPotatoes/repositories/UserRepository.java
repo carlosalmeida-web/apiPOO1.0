@@ -1,6 +1,6 @@
-package com.apiTP.tomatespodres.repositories;
+package com.apiTP.rottenPotatoes.repositories;
 
-import com.apiTP.tomatespodres.entity.User;
+import com.apiTP.rottenPotatoes.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

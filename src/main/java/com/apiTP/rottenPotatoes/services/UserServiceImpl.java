@@ -1,12 +1,12 @@
-package com.apiTP.tomatespodres.services;
+package com.apiTP.rottenPotatoes.services;
 
-import com.apiTP.tomatespodres.entity.PasswordResetToken;
-import com.apiTP.tomatespodres.entity.User;
-import com.apiTP.tomatespodres.entity.VerificationToken;
-import com.apiTP.tomatespodres.models.UserModel;
-import com.apiTP.tomatespodres.repositories.PasswordResetTokenRepository;
-import com.apiTP.tomatespodres.repositories.UserRepository;
-import com.apiTP.tomatespodres.repositories.VerificatioinTokenRepository;
+import com.apiTP.rottenPotatoes.entity.PasswordResetToken;
+import com.apiTP.rottenPotatoes.entity.User;
+import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.models.UserModel;
+import com.apiTP.rottenPotatoes.repositories.PasswordResetTokenRepository;
+import com.apiTP.rottenPotatoes.repositories.UserRepository;
+import com.apiTP.rottenPotatoes.repositories.VerificatioinTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

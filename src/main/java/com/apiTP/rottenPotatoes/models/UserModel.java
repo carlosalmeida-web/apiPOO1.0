@@ -1,6 +1,6 @@
-package com.apiTP.tomatespodres.models;
+package com.apiTP.rottenPotatoes.models;
 
-import com.apiTP.tomatespodres.services.EmailService;
+import com.apiTP.rottenPotatoes.services.EmailService;
 
 public class UserModel {
     private String primeiroNome;
