@@ -5,6 +5,7 @@ import com.apiTP.rottenPotatoes.entity.VerificationToken;
 import com.apiTP.rottenPotatoes.event.RegistrationCompleteEvent;
 import com.apiTP.rottenPotatoes.models.PasswordModel;
 import com.apiTP.rottenPotatoes.models.UserModel;
+import com.apiTP.rottenPotatoes.services.EmailSender;
 import com.apiTP.rottenPotatoes.services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class RegistrationController {
 
     @Autowired
     private ApplicationEventPublisher publisher;
+
+    @Autowired
+    private EmailSender emailSender;
 
     @PostMapping("/register")
     public String registerUser(@RequestBody UserModel userModel, final HttpServletRequest request) {
@@ -90,9 +94,9 @@ public class RegistrationController {
 
     private String senhaResetTokenEmail(User user, String applicationUrl, String token) {
         String url = applicationUrl + "/savePassword?token=" + token;
-
         //enviaVerificacaoPorEmail()
-        log.info("Clique no link para verificar sua conta: {}", url);
+        emailSender.send(user.getEmail(), "Clique no link para verificar sua conta: " + url + "\n" + token);
+        //log.info("Clique no link para verificar sua conta: {}", url);
         return url;
     }
 
@@ -100,7 +104,8 @@ public class RegistrationController {
         String url = applicationUrl + "/verifyRegistration?token=" + verificationToken.getToken();
 
         //enviaVerificacaoPorEmail()
-        log.info("Clique no link para redefinir sua senha: {}", url);
+        //log.info("Clique no link para redefinir sua senha: {}", url);
+        emailSender.send(user.getEmail(), "Clique no link para verificar sua conta: " + url);
     }
 
     private String applicationUrl(HttpServletRequest request) {

@@ -27,7 +27,7 @@ public class EmailService implements EmailSender {
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
             helper.setText(email, true);
             helper.setTo(to);
-            helper.setSubject("Confirme seu email");
+            helper.setSubject("Verifique sua contal");
             mailSender.send(mimeMessage);
         } catch(MessagingException e) {
             LOGGER.error("Falha no envio do email", e);
