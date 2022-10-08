@@ -74,3 +74,29 @@ Link para a documentação: [https://app.swaggerhub.com/apis-docs/RODRIGOFEITOSA
  - Implementa a interface UserService
 - ### **EmailService.java**
  - Implementa a interface EmailSender
+ ## Pacote config
+ - ### *SecurityConfig.java*
+ - Segurança da API
+## Pacote controllers
+
+ - ### *RegistrationController.java*
+ - Contém os enpoints para o funcionamento da API
+   _________________
+
+ - Endpoints em ordem de uso:
+
+	1)@PostMapping("/register")          -> Registra um usuário
+        2) @GetMapping("/verifyRegistration") -> Verifica o registro
+	3)@GetMapping("/resendVerifyToken")  -> Reenvia o token de verificação
+	4)@PostMapping("/resetpassword")     -> Reseta senha 
+        5)@PostMapping("/savePassword")      -> Salva senha
+	6)@PostMapping("/changePassword")    -> Muda senha
+-   *Métodos da classe:*
+    -   private String senhaResetTokenEmail(User user, String applicationUrl, String token) -> Envia por email 
+      - .private void reenviandoTokenDeVerificacaoEmail(User user, String applicationUrl, VerificationToken verificationToken) -> Reenvia por email
+
+
+*Tecnologias utilizadas*
+ 2. Java
+ 3. Spring Boot
+ 4. MySQL
