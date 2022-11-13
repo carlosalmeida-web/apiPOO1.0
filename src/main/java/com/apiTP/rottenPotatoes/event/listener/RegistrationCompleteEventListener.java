@@ -1,9 +1,9 @@
 package com.apiTP.rottenPotatoes.event.listener;
 
-import com.apiTP.rottenPotatoes.entity.User;
+import com.apiTP.rottenPotatoes.dtos.User;
 import com.apiTP.rottenPotatoes.event.RegistrationCompleteEvent;
-import com.apiTP.rottenPotatoes.services.EmailSender;
-import com.apiTP.rottenPotatoes.services.UserService;
+import com.apiTP.rottenPotatoes.services.interfaces.EmailSender;
+import com.apiTP.rottenPotatoes.services.interfaces.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;

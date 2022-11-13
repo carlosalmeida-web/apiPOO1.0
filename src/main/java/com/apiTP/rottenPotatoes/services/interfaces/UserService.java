@@ -1,7 +1,7 @@
-package com.apiTP.rottenPotatoes.services;
+package com.apiTP.rottenPotatoes.services.interfaces;
 
-import com.apiTP.rottenPotatoes.entity.User;
-import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.dtos.User;
+import com.apiTP.rottenPotatoes.dtos.VerificationToken;
 import com.apiTP.rottenPotatoes.models.UserModel;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.apiTP.rottenPotatoes.entity;
+package com.apiTP.rottenPotatoes.dtos;
 
 import javax.persistence.*;
 import java.io.Serializable;

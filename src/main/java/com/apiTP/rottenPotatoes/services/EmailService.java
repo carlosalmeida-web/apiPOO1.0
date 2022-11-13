@@ -1,5 +1,6 @@
 package com.apiTP.rottenPotatoes.services;
 
+import com.apiTP.rottenPotatoes.services.interfaces.EmailSender;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

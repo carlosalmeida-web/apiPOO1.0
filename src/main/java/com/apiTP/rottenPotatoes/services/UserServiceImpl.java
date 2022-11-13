@@ -1,12 +1,14 @@
 package com.apiTP.rottenPotatoes.services;
 
-import com.apiTP.rottenPotatoes.entity.PasswordResetToken;
-import com.apiTP.rottenPotatoes.entity.User;
-import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.dtos.PasswordResetToken;
+import com.apiTP.rottenPotatoes.dtos.User;
+import com.apiTP.rottenPotatoes.dtos.VerificationToken;
 import com.apiTP.rottenPotatoes.models.UserModel;
 import com.apiTP.rottenPotatoes.repositories.PasswordResetTokenRepository;
 import com.apiTP.rottenPotatoes.repositories.UserRepository;
 import com.apiTP.rottenPotatoes.repositories.VerificatioinTokenRepository;
+import com.apiTP.rottenPotatoes.services.interfaces.EmailSender;
+import com.apiTP.rottenPotatoes.services.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,7 +18,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private EmailSender emailSender;
     @Autowired

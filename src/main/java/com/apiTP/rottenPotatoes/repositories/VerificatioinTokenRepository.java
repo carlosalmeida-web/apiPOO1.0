@@ -1,6 +1,6 @@
 package com.apiTP.rottenPotatoes.repositories;
 
-import com.apiTP.rottenPotatoes.entity.VerificationToken;
+import com.apiTP.rottenPotatoes.dtos.VerificationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
