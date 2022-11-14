@@ -31,4 +31,9 @@ public class MovieService {
     public Optional<MovieModel> findById(Long id) {
         return movieRepository.findById(id);
     }
+
+    @Transactional
+    public void delete(MovieModel movieModel) {
+        movieRepository.delete(movieModel);
+    }
 }

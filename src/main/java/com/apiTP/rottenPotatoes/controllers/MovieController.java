@@ -48,4 +48,14 @@ public class MovieController {
         }
         return ResponseEntity.status(HttpStatus.OK).body(movieModelOptional.get());
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Object> deleteMovie(@PathVariable(value = "id") Long id) {
+        Optional<MovieModel> movieModelOptional = movieService.findById(id);
+        if(!movieModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found");
+        }
+        movieService.delete(movieModelOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body("Movie deleted successfully");
+    }
 }
