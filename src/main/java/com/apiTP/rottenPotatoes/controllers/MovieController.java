@@ -10,8 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Null;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,5 +33,19 @@ public class MovieController {
         BeanUtils.copyProperties(movieDTO, movieModel);
         movieModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(movieService.save(movieModel));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<MovieModel>> getAllMovies() {
+        return ResponseEntity.status(HttpStatus.OK).body(movieService.findAll());
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Object> getMovieById(@PathVariable(value = "id") Long id) {
+        Optional<MovieModel> movieModelOptional = movieService.findById(id);
+        if(!movieModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.OK).body("Movie not found");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(movieModelOptional.get());
     }
 }
