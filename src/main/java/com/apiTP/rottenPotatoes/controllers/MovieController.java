@@ -3,8 +3,13 @@ package com.apiTP.rottenPotatoes.controllers;
 import com.apiTP.rottenPotatoes.dtos.MovieDTO;
 import com.apiTP.rottenPotatoes.models.MovieModel;
 import com.apiTP.rottenPotatoes.services.MovieService;
+import org.apache.coyote.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,8 +41,8 @@ public class MovieController {
     }
 
     @GetMapping
-    public ResponseEntity<List<MovieModel>> getAllMovies() {
-        return ResponseEntity.status(HttpStatus.OK).body(movieService.findAll());
+    public ResponseEntity<Page<MovieModel>> getAllMovies(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+        return ResponseEntity.status(HttpStatus.OK).body(movieService.findAll(pageable));
     }
 
     @GetMapping(value = "/{id}")
@@ -57,5 +62,17 @@ public class MovieController {
         }
         movieService.delete(movieModelOptional.get());
         return ResponseEntity.status(HttpStatus.OK).body("Movie deleted successfully");
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Object> updateMovie(@PathVariable(value = "id") Long id,
+                                              @RequestBody @Valid MovieDTO movieDTO) {
+        Optional<MovieModel> movieModelOptional = movieService.findById(id);
+        if(!movieModelOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Movie not found");
+        }
+        var movieModel = movieModelOptional.get();
+        movieModel.setScore(movieDTO.getScore());
+        return ResponseEntity.status(HttpStatus.OK).body(movieService.save(movieModel));
     }
 }

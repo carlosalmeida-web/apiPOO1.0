@@ -3,6 +3,8 @@ package com.apiTP.rottenPotatoes.services;
 import com.apiTP.rottenPotatoes.models.MovieModel;
 import com.apiTP.rottenPotatoes.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -24,8 +26,8 @@ public class MovieService {
         return movieRepository.existsByMovieName(movieName);
     }
 
-    public List<MovieModel> findAll() {
-        return movieRepository.findAll();
+    public Page<MovieModel> findAll(Pageable pageable) {
+        return movieRepository.findAll(pageable);
     }
 
     public Optional<MovieModel> findById(Long id) {
@@ -36,4 +38,5 @@ public class MovieService {
     public void delete(MovieModel movieModel) {
         movieRepository.delete(movieModel);
     }
+
 }
