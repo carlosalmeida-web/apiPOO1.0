@@ -91,6 +91,11 @@ Link para a documentação: [https://app.swaggerhub.com/apis-docs/RODRIGOFEITOSA
 	4)@PostMapping("/resetpassword")     -> Reseta senha 
         5)@PostMapping("/savePassword")      -> Salva senha
 	6)@PostMapping("/changePassword")    -> Muda senha
+	7)@PostMapping("/movies")            -> Adiciona um filme
+	8)@GetMapping("/movies")             -> Busca todos os filmes
+	9)@GetMapping("/movies/{"id"}")      -> Busca filme por id
+	10)@DeleteMapping("/movies/{"id"}")  -> Deleta filme por id
+	11)@PutMapping("/movies/{"id"}")     -> Atualiza a avaliação do filme
 -   *Métodos da classe:*
     -   private String senhaResetTokenEmail(User user, String applicationUrl, String token) -> Envia por email 
       - .private void reenviandoTokenDeVerificacaoEmail(User user, String applicationUrl, VerificationToken verificationToken) -> Reenvia por email
