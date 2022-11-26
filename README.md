@@ -27,7 +27,7 @@ Link para a documentação: [https://app.swaggerhub.com/apis-docs/RODRIGOFEITOSA
  - PasswordResetToken findByToken(String token)
 
 - ### **Interface: VerificatioinTokenRepository.java**
- - VerificationToken findByToken(String token)
+ - VerificationToken findByToken(String token) 
 
   ## Pacote event
 
